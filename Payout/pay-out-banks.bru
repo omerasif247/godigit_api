@@ -1,0 +1,19 @@
+meta {
+  name: pay-out/banks
+  type: http
+  seq: 1
+}
+
+get {
+  url: {{base_url}}/pay-out/banks
+  body: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

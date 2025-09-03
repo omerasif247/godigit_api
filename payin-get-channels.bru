@@ -1,0 +1,23 @@
+meta {
+  name: payin/get-channels
+  type: http
+  seq: 4
+}
+
+get {
+  url: {{base_url}}/pay-in/channels
+  body: none
+  auth: bearer
+}
+
+headers {
+  ~Accept: application/json
+}
+
+auth:bearer {
+  token: {{token}}
+}
+
+settings {
+  encodeUrl: true
+}

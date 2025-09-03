@@ -1,0 +1,25 @@
+meta {
+  name: login
+  type: http
+  seq: 1
+}
+
+post {
+  url: {{base_url}}/oauth/token
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  client_secret: FGyLQHePA28eLfXqNTsIAV1tsXyQcWWRgXGLJSiQ
+  client_id: 0198c2bf-135f-733c-8d1b-f62ebe6e8f16
+  grant_type: client_credentials
+}
+
+script:post-response {
+  bru.setEnvVar("token",res.body.access_token)
+}
+
+settings {
+  encodeUrl: true
+}
